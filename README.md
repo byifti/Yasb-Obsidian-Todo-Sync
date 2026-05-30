@@ -2,7 +2,7 @@
 
 A lightweight background script that keeps [YASB](https://github.com/amnweb/yasb)'s built-in Todo widget in sync with an Obsidian `.md` task file — bidirectionally, in real time.
 
-## How it works
+# How it works
 
 ```
 Obsidian  ──writes──▶  To Do List.md  ──▶  sync.py  ──▶  todo.json  ──▶  YASB
@@ -15,7 +15,7 @@ On startup, the `.md` file is always treated as the source of truth.
 
 ---
 
-## Requirements
+# Requirements
 
 - **Python 3.7+** installed and added to your system PATH
   - Download at [python.org/downloads](https://www.python.org/downloads/)
@@ -25,7 +25,7 @@ On startup, the `.md` file is always treated as the source of truth.
 
 ---
 
-## Setup
+# Setup
 
 ### 1. Configure your paths
 
@@ -72,21 +72,6 @@ Check `sync.log` in the same folder to confirm it's running — you should see s
 
 ---
 
-## File structure
-
-```
-YasbPlusObsidianTodo/
-├── sync.py          ← main sync script
-├── config.ini       ← edit this with your paths
-├── setup.bat        ← first-time setup (run once as Admin)
-├── start_sync.bat   ← manual launcher
-├── .gitignore
-├── sync.log         ← auto-created at runtime
-└── README.md
-```
-
----
-
 ## Obsidian task format
 
 Standard Obsidian checkbox syntax:
@@ -126,9 +111,3 @@ All options live in `config.ini`:
 - **Obsidian not updating from YASB?** — Obsidian hot-reloads open files, changes should appear within a second.
 - **Sync loop?** — Shouldn't happen, but if it does increase `debounce_secs` in `config.ini`.
 
----
-
-## Version history
-
-- **v1.0** — Bidirectional sync, debounce, loop prevention, auto YASB reload, Task Scheduler autostart
-- **v2.0** *(planned)* — Subtask support, custom theming
